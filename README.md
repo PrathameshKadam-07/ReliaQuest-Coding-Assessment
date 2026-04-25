@@ -51,6 +51,7 @@ Port: 8081
 ---
 
 ## 🗂️ Project Structure
+```
 employee-management-system/
 │
 ├── service-registry/
@@ -63,7 +64,7 @@ employee-management-system/
 │   ├── exception/
 │
 └── README.md
-
+```
 ---
 
 ## ⚙️ Tech Stack
