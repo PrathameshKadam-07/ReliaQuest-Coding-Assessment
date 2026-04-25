@@ -1,0 +1,5 @@
+package com.reposoitory;
+
+public interface EmployeeREpo {
+
+}

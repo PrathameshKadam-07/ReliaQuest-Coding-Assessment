@@ -1,0 +1,38 @@
+package com.service;
+
+import java.util.List;
+import java.util.UUID;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.entity.Employee;
+import com.exception.ResourceNotFoundException;
+import com.reposoitory.EmployeeREpo;
+
+@Service
+public class EmployeeServiceImpl implements EmployeeService{
+	@Autowired
+	EmployeeREpo employeeRepo;
+	
+	    @Override
+	    public List<Employee> getAllEmployees() {
+	        return employeeRepo.findAll();
+	    }
+
+		@Override
+		public Employee getEmployeeByUuid(UUID uuid) {
+			
+			return employeeRepo.findById(uuid)
+	                .orElseThrow(() -> new ResourceNotFoundException("Employee not found with id: " + uuid));
+		}
+
+		@Override
+		public Employee createEmployee(Employee employee) {
+	        if (employee.getUuid() == null) {
+	            employee.setUuid(UUID.randomUUID());
+	        }
+
+	        return employeeRepo.save(employee);
+	    }
+}

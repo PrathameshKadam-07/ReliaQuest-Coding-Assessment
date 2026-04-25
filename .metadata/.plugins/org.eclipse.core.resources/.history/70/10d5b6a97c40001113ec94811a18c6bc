@@ -1,0 +1,11 @@
+package com.reposoitory;
+
+import java.util.UUID;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.entity.Employee;
+
+public interface EmployeeREpo extends JpaRepository<Employee,UUID>{
+
+}

@@ -1,0 +1,7 @@
+package com.reposoitory;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface EmployeeREpo extends JpaRepository<T, ID>{
+
+}

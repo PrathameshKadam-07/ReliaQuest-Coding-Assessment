@@ -1,0 +1,16 @@
+spring.application.name=APIGATEWAY
+
+server.port=8082
+
+#routes Configuration
+spring.cloud.gateway.routes[0].id=QUIZE-SERVICE
+spring.cloud.gateway.routes[0].uri=lb://QUIZE-SERVICE
+spring.cloud.gateway.routes[0].predicates[0]=Path=/quiz/**,/quiz
+
+spring.cloud.gateway.routes[1].id=QUESTION-SERVICE
+spring.cloud.gateway.routes[1].uri=lb://QUESTION-SERVICE
+spring.cloud.gateway.routes[1].predicates[1]=Path=/question,/question/**
+
+
+# Eureka Configuration
+eureka.client.service-url.defaultZone=http://localhost:8080/eureka/
