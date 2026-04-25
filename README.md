@@ -83,6 +83,7 @@ GET	/api/v1/employee/{uuid}	Get employee by UUID
 POST	/api/v1/employee	Create new employee
 
 ## 📥 Sample Request
+```
 {
   "firstName": "John",
   "lastName": "Doe",
@@ -91,8 +92,10 @@ POST	/api/v1/employee	Create new employee
   "jobTitle": "Software Engineer",
   "email": "john.doe@example.com"
 }
+```
 
 ## 📤 Sample Response
+```
 {
   "uuid": "generated-uuid",
   "firstName": "John",
@@ -105,6 +108,7 @@ POST	/api/v1/employee	Create new employee
   "contractHireDate": "2026-04-25T10:15:30Z",
   "contractTerminationDate": null
 }
+```
 
 ## 💡 Notes
 uuid → Automatically generated
